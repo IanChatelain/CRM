@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <p>partial render</p>
+    <% if customer.image.present? %>
+      <div class="col-sm">
+        <p> IMAGE !</p>
+      </div>
+      <div class="row-sm">
+        <%= image_tag customer.image %>
+      </div>
+      <div class="row-sm">
+        One of three columns
+      </div>
+    <% end %>
+  </div>
+</div>
