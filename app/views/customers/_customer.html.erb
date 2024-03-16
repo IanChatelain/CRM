@@ -1,16 +1,19 @@
-<div class="container">
-  <div class="row">
-    <p>partial render</p>
+<div class="flex-fill p-2">
+  <div class="card" style="width: 18rem;">
     <% if customer.image.present? %>
-      <div class="col-sm">
-        <p> IMAGE !</p>
-      </div>
-      <div class="row-sm">
-        <%= image_tag customer.image %>
-      </div>
-      <div class="row-sm">
-        One of three columns
-      </div>
+      <%= image_tag(customer.image, size: 100) %>
     <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= customer.full_name %></h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= customer.phone_number %></li>
+      <% if customer.email.present? %>
+        <li class="list-group-item"><%= customer.email %></li>
+      <% end %>
+      <% if customer.notes.present? %>
+        <li class="list-group-item"><%= customer.notes %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
